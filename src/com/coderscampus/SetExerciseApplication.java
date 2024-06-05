@@ -12,7 +12,7 @@ public class SetExerciseApplication {
 	public static void main(String[] args) throws IOException {
 		FileService fileService = new FileService();
 		// extract the data from the CSV
-		fileService.readFile();
+		pokerHands = fileService.readFile();
 
 		// remove ACE HIGH and QUEEN HIGH
 		pokerHands.remove(" ACE HIGH");
