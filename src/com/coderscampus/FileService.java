@@ -12,17 +12,19 @@ import java.util.Set;
 public class FileService {
 
 	public Set<String> readFile() throws IOException {
-		Set<String> hands = new HashSet<>();
+		Set<String> winningHand = new HashSet<>();
 		BufferedReader reader = new BufferedReader(new FileReader("PokerHands.csv"));
 		String line;
 
 		while ((line = reader.readLine()) != null) {
-
-			hands.add(line);
+			String[] parts = line.split(",");
+			String name = parts[0];
+			String flush = parts[1];
+			winningHand.add(line);
 
 		}
 		reader.close();
-		return hands;
+		return winningHand;
 
 	}
 }
